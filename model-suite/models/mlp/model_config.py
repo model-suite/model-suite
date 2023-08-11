@@ -24,4 +24,3 @@ class MultiLayerPerceptronConfig:
         if not hidden_layers:
             warnings.warn("Since there are no hidden layers the activation function will not be used.")
 
-# 400 200 3
