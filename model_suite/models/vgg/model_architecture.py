@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-import model_config
+from .model_config import VGGConfig
 
 # I believe VGG doesn't initially include BatchNorm or Dropout but here they are.
 class VGGBlock(nn.Module):

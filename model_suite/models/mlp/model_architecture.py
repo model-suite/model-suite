@@ -1,5 +1,5 @@
 import torch
-import model_config
+from .model_config import MultiLayerPerceptronConfig
 from torch import nn
 
 class MultiLayerPerceptron(nn.Module):
