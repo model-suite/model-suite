@@ -1,2 +1,3 @@
-from .mlp import *
-from .vgg import *
+from .mlp import MultiLayerPerceptron, MultiLayerPerceptronConfig
+from .vgg import VGG, VGGConfig
+from .alexnet import AlexNet, AlexNetConfig
