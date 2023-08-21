@@ -2,6 +2,7 @@ import torch
 from .model_config import MultiLayerPerceptronConfig
 from torch import nn
 
+
 class MultiLayerPerceptron(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -19,7 +20,9 @@ class MultiLayerPerceptron(nn.Module):
 
             # Add hidden layers
             for i in range(len(config.hidden_layers) - 1):
-                layers.append(nn.Linear(config.hidden_layers[i], config.hidden_layers[i + 1]))
+                layers.append(
+                    nn.Linear(config.hidden_layers[i], config.hidden_layers[i + 1])
+                )
                 if config.batch_normalization:
                     layers.append(nn.BatchNorm1d(config.hidden_layers[i + 1]))
                 layers.append(nn.ReLU())
@@ -30,13 +33,17 @@ class MultiLayerPerceptron(nn.Module):
             if config.final_activation == "sigmoid":
                 layers.append(nn.Sigmoid())
             elif config.final_activation == "softmax":
-                layers.append(nn.Softmax(dim=1))  # Make sure to specify the appropriate dimension for softmax
+                layers.append(
+                    nn.Softmax(dim=1)
+                )  # Make sure to specify the appropriate dimension for softmax
         else:
             layers.append(nn.Linear(config.input_shape, config.output_shape))
             if config.final_activation == "sigmoid":
                 layers.append(nn.Sigmoid())
             elif config.final_activation == "softmax":
-                layers.append(nn.Softmax(dim=1))  # Make sure to specify the appropriate dimension for softmax
+                layers.append(
+                    nn.Softmax(dim=1)
+                )  # Make sure to specify the appropriate dimension for softmax
 
         # Combine all layers into the MLP
         self.mlp = nn.Sequential(*layers)

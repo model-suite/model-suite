@@ -2,6 +2,7 @@ from torch import nn
 import torch
 from .model_config import AlexNetConfig
 
+
 class AlexNet(nn.Module):
     def __init__(self, config: AlexNetConfig) -> None:
         super().__init__()
