@@ -4,13 +4,13 @@ import warnings
 class MultiLayerPerceptronConfig:
     def __init__(
         self,
-        dropout_rate: float = 0.2,
-        input_shape: int = 400,
-        output_shape: int =10,
+        dropout_rate=0.2,
+        input_shape=400,
+        output_shape=10,
         hidden_layers: tuple or False = (200,),
-        activation: str = "relu",
-        final_activation: str = "sigmoid",
-        batch_normalization: bool = True,
+        activation="relu",
+        final_activation="sigmoid",
+        batch_normalization=True,
     ):
         self.dropout_rate = dropout_rate
         self.input_shape = input_shape

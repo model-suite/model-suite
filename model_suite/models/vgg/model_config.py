@@ -4,11 +4,11 @@ import warnings
 class VGGConfig:
     def __init__(
         self,
-        input_shape: tuple[int, ...] = (224, 224, 3),
-        num_classes: int = 1000,  # ImageNet, 1000 object classes.
-        architecture_type: str = "VGG16",
-        batch_normalization: bool = False,
-        dropout_rate: float = 0.0,
+        input_shape=(224, 224, 3),
+        num_classes=1000,  # ImageNet, 1000 object classes.
+        architecture_type="VGG16",
+        batch_normalization=False,
+        dropout_rate=0.0,
     ):
         self.architecture_type = architecture_type
         if architecture_type not in ["VGG16", "VGG19"]:
