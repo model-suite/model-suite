@@ -34,8 +34,8 @@ We welcome contributions from the open-source community! If you're interested in
 This repository is licensed under the Apache License. Feel free to use the code for educational, research, and commercial purposes.
 
 ## Contact Us
-If you have any questions, suggestions, or just want to chat about AI and model architectures, feel free to reach out to us:
-buura: aldal.bugra@gmail.com
-osbm: osmanfbayram@gmail.com
-
+If you have any questions, suggestions, or just want to chat about AI and model architectures, feel free to reach out to us:  
+buura: aldal.bugra@gmail.com  
+osbm: osmanfbayram@gmail.com  
+  
 We hope you find the Model Suite repository valuable and informative.
