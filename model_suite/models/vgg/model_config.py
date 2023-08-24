@@ -1,8 +1,10 @@
 import warnings
 from ...base_config import BaseModelConfig
 
+
 class VGGConfig(BaseModelConfig):
     architecture_name = "VGG"
+
     def __init__(
         self,
         input_shape: tuple[int, ...] = (224, 224, 3),

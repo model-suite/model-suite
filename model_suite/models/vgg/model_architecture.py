@@ -3,6 +3,7 @@ import torch.nn as nn
 from .model_config import VGGConfig
 from ...base_model import BaseModel
 
+
 # I believe VGG doesn't initially include BatchNorm or Dropout but here they are.
 class VGGBlock(nn.Module):
     def __init__(self, in_channels, out_channels, num_conv_layers, batch_norm=True):
@@ -28,6 +29,7 @@ class VGGBlock(nn.Module):
 
 class VGG(BaseModel):
     Config = VGGConfig
+
     def __init__(self, config):
         super(VGG, self).__init__()
 

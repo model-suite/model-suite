@@ -1,8 +1,10 @@
 import warnings
 from ...base_config import BaseModelConfig
 
+
 class MultiLayerPerceptronConfig(BaseModelConfig):
     architecture_name = "MultiLayerPerceptron"
+
     def __init__(
         self,
         dropout_rate: float = 0.2,
