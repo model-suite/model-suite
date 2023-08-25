@@ -1,9 +1,12 @@
 import torch
 from .model_config import MultiLayerPerceptronConfig
 from torch import nn
+from ...base_model import BaseModel
 
 
-class MultiLayerPerceptron(nn.Module):
+class MultiLayerPerceptron(BaseModel):
+    Config = MultiLayerPerceptronConfig
+
     def __init__(self, config):
         super().__init__()
         self.config = config

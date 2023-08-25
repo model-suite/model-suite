@@ -1,9 +1,12 @@
 from torch import nn
 import torch
 from .model_config import AlexNetConfig
+from ...base_model import BaseModel
 
 
-class AlexNet(nn.Module):
+class AlexNet(BaseModel):
+    Config = AlexNetConfig
+
     def __init__(self, config: AlexNetConfig) -> None:
         super().__init__()
         self.config = config

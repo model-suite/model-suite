@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 from .model_config import VGGConfig
+from ...base_model import BaseModel
 
 
 # I believe VGG doesn't initially include BatchNorm or Dropout but here they are.
@@ -26,8 +27,10 @@ class VGGBlock(nn.Module):
         return self.block(x)
 
 
-class VGG(nn.Module):
-    def __init__(self, config, num_classes):
+class VGG(BaseModel):
+    Config = VGGConfig
+
+    def __init__(self, config):
         super(VGG, self).__init__()
 
         self.config = config
@@ -53,7 +56,7 @@ class VGG(nn.Module):
             nn.Linear(4096, 4096),
             nn.ReLU(True),
             nn.Dropout(self.config.dropout_rate),
-            nn.Linear(4096, num_classes),
+            nn.Linear(4096, config.num_classes),
             nn.Softmax(dim=1),
         )
 

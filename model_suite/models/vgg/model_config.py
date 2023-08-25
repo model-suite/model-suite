@@ -1,7 +1,10 @@
 import warnings
+from ...base_config import BaseModelConfig
 
 
-class VGGConfig:
+class VGGConfig(BaseModelConfig):
+    architecture_name = "VGG"
+
     def __init__(
         self,
         input_shape: tuple[int, ...] = (224, 224, 3),
@@ -9,6 +12,7 @@ class VGGConfig:
         architecture_type: str = "VGG16",
         batch_normalization: bool = False,
         dropout_rate: float = 0.0,
+        **kwargs
     ):
         self.architecture_type = architecture_type
         if architecture_type not in ["VGG16", "VGG19"]:
