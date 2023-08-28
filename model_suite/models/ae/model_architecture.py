@@ -1,6 +1,7 @@
 import torch
 from torch import nn
 from .model_config import AutoencoderConfig
+from ...base_model import BaseModel
 
 
 class MultiLayerPerceptron(nn.Module):
@@ -113,7 +114,7 @@ class ConvolutionalNetwork(nn.Module):
             layers.append(nn.Dropout(dropout_rate))
 
 
-class Autoencoder(nn.Module):
+class Autoencoder(BaseModel):
     Config = AutoencoderConfig
 
     def __init__(self, config: AutoencoderConfig):
