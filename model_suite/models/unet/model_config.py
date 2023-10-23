@@ -2,6 +2,7 @@ from ...base_config import BaseModelConfig
 
 __all__ = ["UNetConfig"]
 
+
 class UNetConfig(BaseModelConfig):
     architecture_name = "UNet"
 
@@ -12,7 +13,7 @@ class UNetConfig(BaseModelConfig):
         out_channels: int = 2,
         channels=(64, 128, 256, 512, 1024),
         kernel_size: int = 3,
-        strides = (2, 2, 2, 2),
+        strides=(2, 2, 2, 2),
         out_activation: str = "softmax",
         is_bilinear: bool = True,
     ):

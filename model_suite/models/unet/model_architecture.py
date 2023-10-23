@@ -6,6 +6,7 @@ from ...base_model import BaseModel
 
 __all__ = ["UNet"]
 
+
 class UNet(BaseModel):
     def __init__(self, config: UNetConfig):
         self.config = config
@@ -21,8 +22,9 @@ class UNet(BaseModel):
             self.__batch_norm = nn.BatchNorm3d
             self.__conv_transpose = nn.ConvTranspose3d
 
-        
-        self.inc = self._get_double_conv(self.config.in_channels, self.config.channels[0])
+        self.inc = self._get_double_conv(
+            self.config.in_channels, self.config.channels[0]
+        )
         self.down1 = self.__get_down(self.config.in_channels, self.config.channels[0])
         self.down2 = self.__get_down(self.config.channels[0], self.config.channels[1])
         self.down3 = self.__get_down(self.config.channels[1], self.config.channels[2])
@@ -33,9 +35,6 @@ class UNet(BaseModel):
         self.outc = self.__conv(self.config.channels[0], self.config.out_channels, 1)
 
         super().__init__()
-
-    
-
 
     def _get_double_conv(self, in_channels: int, out_channels: int) -> nn.Sequential:
         return nn.Sequential(
@@ -65,12 +64,11 @@ class UNet(BaseModel):
                     in_channels, out_channels, self.config.strides, self.config.strides
                 ),
                 self._get_double_conv(in_channels, out_channels),
-            )   
+            )
 
     def __get_out_conv(self, in_channels: int, out_channels: int) -> nn.Sequential:
         return nn.Sequential(
-            self.__conv(in_channels, out_channels, 1),
-            nn.Softmax(dim=1)
+            self.__conv(in_channels, out_channels, 1), nn.Softmax(dim=1)
         )
 
     def forward(x):
