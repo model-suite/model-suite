@@ -1,6 +1,5 @@
-from torch import nn
 import torch
-
+from torch import nn
 from .model_config import UNetConfig
 from ...base_model import BaseModel
 

@@ -1,6 +1,6 @@
 import torch
-from .model_config import MultiLayerPerceptronConfig
 from torch import nn
+from .model_config import MultiLayerPerceptronConfig
 from ...base_model import BaseModel
 
 
