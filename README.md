@@ -16,7 +16,8 @@ Welcome to the Model Suite repository! This is a collaborative project created a
 |VGG|[Paper](https://doi.org/10.48550/arXiv.1409.1556)|
 |AlexNet|[Paper](https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)|
 |ResNet|[Paper](arXiv:1512.03385)|
-
+|UNet|[Paper](arXiv:1505.04597)|
+|Autoencoders|-|
 We are continuously working on expanding our collection to include even more architectures. Please feel free to open an issue for more implementations.
 
 ## Usage
