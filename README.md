@@ -18,6 +18,7 @@ Welcome to the Model Suite repository! This is a collaborative project created a
 |ResNet|[Paper](arXiv:1512.03385)|
 |UNet|[Paper](arXiv:1505.04597)|
 |Autoencoders|-|
+
 We are continuously working on expanding our collection to include even more architectures. Please feel free to open an issue for more implementations.
 
 ## Usage
