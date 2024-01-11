@@ -9,6 +9,7 @@ __all__ = ["UNet"]
 class UNet(BaseModel):
     def __init__(self, config: UNetConfig):
         self.config = config
+        super().__init__()
 
         if self.config.spatial_dimensions == 2:
             self.__conv = nn.Conv2d
@@ -33,7 +34,6 @@ class UNet(BaseModel):
         self.up3 = self.__get_up(self.config.channels[1], self.config.channels[0])
         self.outc = self.__conv(self.config.channels[0], self.config.out_channels, 1)
 
-        super().__init__()
 
     def _get_double_conv(self, in_channels: int, out_channels: int) -> nn.Sequential:
         return nn.Sequential(
